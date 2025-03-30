@@ -1,0 +1,31 @@
+name: Setup Node
+description: 'Ensure NNode is installed, and setup pnpm with caching'
+
+inputs:
+  version:
+    type: choice
+    description: "Version to install"
+    options:
+      - '20.x'
+      - '22.x'
+    default: '20.x'
+  package_json_file:
+    type: string
+    description: 'Path to package.json'
+    default: 'js/package.json'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 9
+        package_json_file: ${{ inputs.package_json_file }}
+
+    - name: Set up Node ${{ inputs.version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.version }}
+        cache: pnpm
+        cache-dependency-path: '**/pnpm-lock.yaml'
