@@ -9,10 +9,10 @@ inputs:
       - '20.x'
       - '22.x'
     default: '20.x'
-  package_json_file:
+  js_folder:
     type: string
     description: 'Path to package.json'
-    default: 'js/package.json'
+    default: 'js'
 
 runs:
   using: 'composite'
@@ -21,11 +21,11 @@ runs:
       uses: pnpm/action-setup@v4
       with:
         version: 9
-        package_json_file: ${{ inputs.package_json_file }}
+        package_json_file: "${{ inputs.js_folder }}/package.json"
 
     - name: Set up Node ${{ inputs.version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ inputs.version }}
         cache: pnpm
-        cache-dependency-path: '**/pnpm-lock.yaml'
+        cache-dependency-path: "${{ inputs.js_folder }}/pnpm-lock.yaml"
