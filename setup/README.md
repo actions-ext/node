@@ -9,6 +9,6 @@ The following example yaml code will setup Node 20.x environment with pnpm and c
 - name: Setup Node
   uses: actions-ext/node/setup@v1
   with:
-    manager: pnpm
     version: '20.x'
+    js_folder: 'js'
 ```
