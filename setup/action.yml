@@ -24,7 +24,7 @@ runs:
         package_json_file: "${{ inputs.js_folder }}/package.json"
 
     - name: Set up Node ${{ inputs.version }}
-      uses: actions/setup-node@v5
+      uses: actions/setup-node@v6
       with:
         node-version: ${{ inputs.version }}
         cache: pnpm
