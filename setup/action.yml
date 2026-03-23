@@ -18,7 +18,7 @@ runs:
   using: 'composite'
   steps:
     - name: Install pnpm
-      uses: pnpm/action-setup@v4
+      uses: pnpm/action-setup@v5
       with:
         version: 9
         package_json_file: "${{ inputs.js_folder }}/package.json"
