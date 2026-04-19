@@ -9,6 +9,10 @@ inputs:
       - '20.x'
       - '22.x'
     default: '20.x'
+  pnpm_version:
+    type: string
+    description: 'Version of pnpm to install'
+    default: '10'
   js_folder:
     type: string
     description: 'Path to package.json'
@@ -20,7 +24,7 @@ runs:
     - name: Install pnpm
       uses: pnpm/action-setup@v5
       with:
-        version: 9
+        version: ${{ inputs.pnpm_version }}
         package_json_file: "${{ inputs.js_folder }}/package.json"
 
     - name: Set up Node ${{ inputs.version }}
