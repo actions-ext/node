@@ -30,7 +30,6 @@ jobs:
     - name: Setup Node
       uses: actions-ext/node/setup@main
       with:
-        version: '20.x'
         js_folder: .
 
     - name: Install
