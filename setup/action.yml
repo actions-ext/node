@@ -12,7 +12,7 @@ inputs:
   pnpm_version:
     type: string
     description: 'Version of pnpm to install'
-    default: '11'
+    default: '11.11.0'
   js_folder:
     type: string
     description: 'Path to package.json'
