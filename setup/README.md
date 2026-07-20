@@ -7,7 +7,7 @@ The following example yaml code will setup Node 20.x environment with pnpm and c
 
 ```yaml
 - name: Setup Node
-  uses: actions-ext/node/setup@165e261b251b39bcd073c10e84d218393d3b9960
+  uses: actions-ext/node/setup@f215ffc1fb906c5771e0135698560838e6ef31f0
   with:
     version: '20.x'
     js_folder: 'js'
