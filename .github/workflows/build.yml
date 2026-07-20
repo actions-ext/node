@@ -28,7 +28,7 @@ jobs:
         printf 'lockfileVersion: '9.0'\nsettings:\n\tautoInstallPeers: true\n\texcludeLinksFromLockfile: false\nimporters:\n.: {}' > pnpm-lock.yaml
 
     - name: Setup Node
-      uses: ./node/setup
+      uses: ./setup
       with:
         js_folder: .
 
